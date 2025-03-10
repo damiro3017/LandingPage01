@@ -5,7 +5,7 @@ Este proyecto es una práctica de desarrollo basada en una Landing Page de Figma
 ## 🎨 Diseño Original
 
 El diseño de referencia fue creado en Figma y puede consultarse en el siguiente enlace:
-[Figma - Illiyin Studio](<https://www.figma.com/design/XzHpb24QuTUx1h8f04siWs/%5BFREE%5D-Estatery---Real-Estate-SaaS-Web-and-Mobile-UI-Kit-(Community)?node-id=0-1&t=yzleqSFpIV3w9NNo-1>)
+[Figma - Illiyin Studio](https://www.figma.com/community/file/1159150161670385658)
 
 📌 **Nota:** El diseño final puede no ser idéntico al 100% con el original, ya que es un ejercicio de práctica.
 
