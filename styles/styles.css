@@ -491,6 +491,60 @@ button {
   font-weight: 600;
 }
 
+/* Navigation section */
+.navigation__section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.navigation__links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.navigation__link__container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.navigation__link__list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Footer section */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem;
+
+  border-top: 1px solid var(--gray);
+  background-color: var(--white);
+}
+
+.footer__copyright {
+  color: gray;
+}
+
+.footer__links__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Meadia Queries*/
 @media screen and (min-width: 768px) {
   .header {
