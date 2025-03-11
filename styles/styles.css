@@ -15,6 +15,7 @@
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -26,23 +27,27 @@ li {
 }
 
 h1 {
-  font-size: 2.027rem;
+  font-size: 2.986rem;
 }
 
 h2 {
-  font-size: 1.802rem;
+  font-size: 2.488rem;
 }
 
 h3 {
-  font-size: 1.602rem;
+  font-size: 2.074rem;
 }
 
 h4 {
-  font-size: 1.424rem;
+  font-size: 1.728rem;
 }
 
 h5 {
-  font-size: 1.266rem;
+  font-size: 1.44rem;
+}
+
+h6 {
+  font-size: 1.2rem;
 }
 
 button {
@@ -94,7 +99,6 @@ button {
 
 .close__menu {
   color: var(--white);
-  font-size: 2rem;
   transition: color var(--transition-speed);
 }
 
@@ -110,17 +114,26 @@ button {
   font-weight: 600;
 }
 
-.navbar__link {
+.navbar__link,
+.link__item {
   display: flex;
   padding: 0.5rem 0;
   gap: 0.5rem;
-  color: var(--white);
   border-bottom: 1px solid transparent;
-  transition: color var(--transition-speed),
-    border-bottom var(--transition-speed);
+  transition: var(--transition-speed);
+  cursor: pointer;
 }
 
-.navbar__link:hover {
+.link__item {
+  color: var(--dark-blue);
+}
+
+.navbar__link {
+  color: var(--white);
+}
+
+.navbar__link:hover,
+.link__item:hover {
   color: var(--blue);
   border-bottom: 1px solid var(--blue);
 }
@@ -156,7 +169,6 @@ button {
 /* Hero Section */
 .hero__section {
   display: grid;
-  place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 100%;
   background: linear-gradient(
@@ -168,6 +180,7 @@ button {
 
 .hero__section__info {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
@@ -177,7 +190,7 @@ button {
 
 .hero__section__description {
   font-weight: 600;
-  text-wrap: balance;
+  text-align: center;
 }
 
 .hero__section__options {
@@ -223,7 +236,6 @@ button {
 
 .hero_section__stat h6 {
   color: var(--blue);
-  text-wrap: balance;
   margin-top: 1rem;
 }
 
@@ -234,19 +246,11 @@ button {
 }
 
 .hero__section__image {
-  padding: 2.5rem 1.25rem;
-  background-color: var(--white);
-  width: 100%;
   display: none;
+  width: 100%;
 }
 
 .hero__section__image img {
-  border-radius: 1rem;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(224, 222, 247, 1) 100%
-  );
   max-width: 100%;
 }
 
@@ -272,6 +276,13 @@ button {
   align-items: flex-start;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.find__home__stats__container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .find__home__stat {
@@ -303,7 +314,15 @@ button {
 
 .select__home__description {
   margin-top: 1rem;
-  text-wrap: balance;
+}
+
+.select__home__search__options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .select__home__search-bar {
@@ -311,7 +330,6 @@ button {
   align-items: center;
   border-radius: 0.25rem;
   padding: 0.75rem;
-  margin-top: 3rem;
   gap: 1rem;
   background-color: var(--gray);
 }
@@ -327,7 +345,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+
   background-color: var(--gray);
   border-radius: 0.25rem;
   padding: 0.3rem;
@@ -399,7 +417,6 @@ button {
 
 .info_price {
   color: var(--blue);
-  font-size: 1.2rem;
   font-weight: 700;
 }
 
@@ -421,7 +438,6 @@ button {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 1rem;
   color: gray;
 }
 
@@ -452,6 +468,7 @@ button {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  max-width: 25rem;
 }
 
 .email__section__imput {
@@ -494,10 +511,13 @@ button {
 /* Navigation section */
 .navigation__section {
   display: flex;
+  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   gap: 2rem;
   padding: 1.5rem;
+  width: 100%;
+  margin: auto;
 }
 
 .navigation__links {
@@ -547,10 +567,66 @@ button {
 
 /* Meadia Queries*/
 @media screen and (min-width: 768px) {
-  .header {
+  .header,
+  .hero__section,
+  .find__home__section,
+  .select__home__section,
+  .email__section,
+  .navigation__section,
+  .footer {
     padding: 2rem 3rem;
   }
 
+  .hero__section {
+    gap: 2rem;
+  }
+
+  .hero__section__description {
+    text-align: left;
+  }
+
+  .hero__section__info {
+    text-align: left;
+    padding: 0;
+  }
+
+  .hero_section__stats {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hero__section__image {
+    display: block;
+  }
+
+  /* Find Home section */
+  .find__home__stats {
+    margin-top: 1rem;
+    flex-direction: row;
+  }
+
+  /* Search Home section */
+  .select__home__search__options {
+    flex-direction: row;
+  }
+
+  /* Navigation section */
+  .navigation__section {
+    flex-direction: row;
+  }
+
+  .navigation__links {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 80%;
+    margin: auto;
+  }
+
+  .footer {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
   .open__menu {
     display: none;
   }
@@ -583,8 +659,80 @@ button {
   }
 }
 
-@media (min-width: 1024px) {
-}
-
 @media (min-width: 1440px) {
+  .header,
+  .hero__section,
+  .find__home__section,
+  .select__home__section,
+  .email__section,
+  .navigation__section,
+  .footer {
+    padding: 3rem 6rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  h5 {
+    font-size: 1.75rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+
+  /* Header section */
+  .header__container {
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  /* Hero Section */
+  .hero__section {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .hero__section__info {
+    align-items: flex-start;
+    padding: 2rem;
+  }
+
+  .hero__section__image {
+    display: flex;
+  }
+
+  /* Selection Home section */
+  .selection__catalog {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .selection__catalog__item__info {
+    padding: 3rem 2rem 2rem 2rem;
+  }
+
+  /* Navigation section */
+  .navigation__links {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  /* Footer section */
+  .footer {
+    flex-wrap: nowrap;
+  }
 }
